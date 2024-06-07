@@ -5,6 +5,10 @@ import numpy as np
 import cv2
 import glob
 
+np.int = int
+np.bool = bool
+np.float = float
+
 from os import path
 from argparse import ArgumentParser
 from torch.utils.data import Dataset, DataLoader

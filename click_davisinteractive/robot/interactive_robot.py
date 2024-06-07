@@ -117,7 +117,7 @@ class InteractiveScribblesRobot(object):
         X, Y = X[M], Y[M]           #-> Take only elements where mask is True
         points = np.c_[X, Y]        # Concatenate X and Y
         G = radius_neighbors_graph(points, np.sqrt(2), mode='distance')
-        T = nx.from_scipy_sparse_matrix(G)
+        T = nx.from_scipy_sparse_array(G)
 
         return T, points
 

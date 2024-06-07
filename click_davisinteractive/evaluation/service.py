@@ -294,6 +294,10 @@ class EvaluationService:
         # Returns
             Dictionary: with different scores computed and the curve values
         """
+        if 'frame' in df:
+            df = df.drop(columns='frame')
+        if 'session_id' in df:
+            df = df.drop(columns='session_id')
         if len(df) == 0:
             df = df.set_index(
                 ['interaction', 'sequence', 'scribble_idx', 'object_id'])
@@ -301,10 +305,6 @@ class EvaluationService:
             df = df.groupby(
                 ['interaction', 'sequence', 'scribble_idx',
                  'object_id']).mean()
-        if 'frame' in df:
-            df = df.drop(columns='frame')
-        if 'session_id' in df:
-            df = df.drop(columns='session_id')
 
         dfr = self._reconstruct_report(df)
         df_average = dfr.groupby(['interaction']).mean()
