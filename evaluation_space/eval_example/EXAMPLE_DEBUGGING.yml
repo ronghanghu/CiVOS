@@ -32,8 +32,8 @@ interaction_params:
   use_soft_in_prev_mask: true
   aggregation_vujas    : true
 
-CGS : 1   # Click Generating Strategy (GCS): 1,2 and 3 (See paper for more details)
-limit_for_points: 1  # --> Put a high value like 1000 in order to take all interactions
+CGS : 2   # Click Generating Strategy (GCS): 1,2 and 3 (See paper for more details)
+limit_for_points: 2  # --> Put a high value like 1000 in order to take all interactions
 minimal_region_size: 0  # Can be a value also, e.g., stop reducing the size until it is for 4 times smaller and now look
                         # for the click coordinates. If 0, then reduce until the central point is found.
 minimal_area_to_considere: 100  # Minimal area in pixels to considere for a click prediction, 0 if every area to be considered
